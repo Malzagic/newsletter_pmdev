@@ -14,8 +14,8 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
     const { firstName, lastName, email } = req.body;
 
-    const apiKey = "704a370820df63874782989225b737a4-us21";
-    const audienceID = "a5dc13aae8";
+    const apiKey = process.env.API_KEY;
+    const audienceID = process.env.AUDIENCE_ID;
 
     const data = {
         members: [
