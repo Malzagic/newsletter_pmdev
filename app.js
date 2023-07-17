@@ -45,7 +45,7 @@ app.post("/", (req, res) => {
         response.on("data", (data) => {
             const getData = JSON.parse(data)
 
-            if (getData.error_count === 1) res.sendFile(__dirname + "/failure.html");
+            if (getData.error_count === 1 || response.statusCode !== 200) res.sendFile(__dirname + "/failure.html");
             else res.sendFile(__dirname + "/success.html");
         });
     });
