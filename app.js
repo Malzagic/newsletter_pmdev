@@ -14,6 +14,7 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
     const { firstName, lastName, email } = req.body;
 
+    // change api keys to .env 
     const apiKey = process.env.API_KEY;
     const audienceID = process.env.AUDIENCE_ID;
 
